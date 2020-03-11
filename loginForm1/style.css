@@ -1,0 +1,188 @@
+:root {
+    /*common variables*/
+    --leftBoxWidth: 350px;
+    --rightBoxWidth: 600px;
+}
+
+@font-face {
+    /* Import */
+    font-family: 'Poppins-Light';
+    src: url("Poppins/Poppins-Light.ttf");
+}
+
+*,
+*::after,
+*::before {
+    /* all after and before style*/
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html,
+body {
+    /*Body style*/
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    /*Background style*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1 url("background.jpg");
+    background-size: cover;
+}
+
+.login {
+    /*"Start sign In" style*/
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    left: 0;
+    width: 100%;
+    height: 350px;
+    font-family: 'Poppins-Light';
+    font-size: 40px;
+    text-align: center;
+    line-height: 350px;
+    cursor: pointer;
+    transition: margin-top .5s ease;
+    -webkit-transition: margin-top .5s ease;
+    -moz-transition: margin-top .5s ease;
+    -ms-transition: margin-top .5s ease;
+    -o-transition: margin-top .5s ease;
+}
+
+.loginForm {
+    /*Login box style*/
+    position: absolute;
+    z-index: 1;
+    width: var(--leftBoxWidth);
+    height: 800px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    overflow: hidden;
+    clip-path: circle(calc(var(--leftBoxWidth) / 2) at 50% 50%);
+}
+
+.loginForm:hover .login {
+    /*Animatation of text "Start sign In" */
+    margin-top: -10px;
+}
+
+@keyframes addClassOpenFormFull {
+    /*Keyframe to make custom animation*/
+    100% {
+        clip-path: circle(100%);
+    }
+}
+
+.addClassOpenFormFull {
+    /*Adding this class by jquery*/
+    animation: addClassOpenFormFull .35s ease-in-out forwards;
+    -webkit-animation: addClassOpenFormFull .35s ease-in-out forwards;
+}
+
+@keyframes addClassOpenFormCircle {
+    /*Keyframe to make custom animation*/
+    0% {
+        clip-path: circle(100%);
+    }
+    100% {
+        clip-path: circle(calc(var(--leftBoxWidth) / 2) at 50% 50%);
+    }
+}
+
+.addClassOpenFormCircle {
+    /*Adding this class by jquery*/
+    animation: addClassOpenFormCircle .35s ease-in-out forwards;
+    -webkit-animation: addClassOpenFormCircle .35s ease-in-out forwards;
+}
+
+.leftBox {
+    /*Login Left Box style*/
+    width: var(--leftBoxWidth);
+    height: 100%;
+    background: #f1f1f1 url("backgroundLogin.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.loginText {
+    /*Sign in text style*/
+    position: absolute;
+    top: 30px;
+    left: -200px;
+    font-size: 40px;
+    font-family: 'Poppins-Light';
+    color: #ffffff;
+}
+
+.closeIcon {
+    /*Close button style*/
+    position: absolute;
+    top: 45px;
+    left: calc(var(--leftBoxWidth) - 40px);
+    font-size: 25px;
+    font-family: 'Poppins-Light';
+    color: #ffffff;
+    display: none;
+    cursor: pointer;
+    ;
+}
+
+.CopyRights {
+    /*Copy rights style*/
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-family: 'Poppins-Light';
+    color: #ffffff;
+}
+
+.CopyRights>.by {
+    /*By tex style*/
+    font-size: 25px;
+    margin-left: -200px;
+}
+
+.CopyRights>.name {
+    /*Hali iliya name style*/
+    font-size: 15px;
+    margin-left: -200px;
+}
+
+.rightBox {
+    /*Right box style*/
+    position: absolute;
+    top: 0;
+    left: var(--leftBoxWidth);
+    width: var(--rightBoxWidth);
+    height: 100%;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.rightBox div {
+    /*text of "YOUR FORM HERE" style*/
+    font-size: 30px;
+    text-align: center;
+    line-height: 800px;
+}
